@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gracias Nonna - Tasador Profesional by @kohantoys</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon2.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,7 +13,7 @@
 
     <div id="splash" class="splash-screen">
         <div class="splash-content">
-            <img src="favicon.png" alt="Logo" class="splash-logo">
+            <img src="favicon2.png" alt="Logo" class="splash-logo">
             <h1 class="splash-title">¿Querés saber cuánto vale tu terreno para un desarrollador?</h1>
             <button id="btn-splash-exit" class="btn-primary-splash">¡Gracias, Nonna!</button>
         </div>
@@ -21,7 +21,7 @@
 
     <div class="sidebar">
         <div class="header">
-            <img src="favicon.png" alt="Logotipo" id="app-logo">
+            <img src="favicon2.png" alt="Logotipo" id="app-logo">
             <div>
                 <h1>Gracias Nonna</h1>
                 <a href="https://x.com/kohantoys" target="_blank" class="author-link">by @kohantoys</a>
@@ -266,8 +266,8 @@
                                 </div>
                             </div>
                             <div class="slider-input-group">
-                                <input type="range" id="sl-canje" min="0" max="45" value="15" step="1">
-                                <input type="number" id="num-canje" value="15" step="1">
+                                <input type="range" id="sl-canje" min="0" max="45" value="15" step="0.5">
+                                <input type="number" id="num-canje" value="15" step="0.5">
                             </div>
                         </div>
                     </div>
@@ -748,13 +748,13 @@
             cResid.style.background = residualCash >= 0 ? 'rgba(51, 255, 170, 0.05)' : 'rgba(255, 77, 77, 0.05)';
             cResid.style.borderColor = residualCash >= 0 ? 'var(--accent)' : 'var(--danger)';
 
-            let incidencia = (residualCash > 0 && in_sales > 0) ? (residualCash / in_sales) * 100 : 0;
+            let incidencia = (residualAbs > 0 && in_sales > 0) ? (residualAbs / in_sales) * 100 : 0;
             let oIncidencia = document.getElementById('out-incidencia');
             if (oIncidencia) {
                 let color = '#ff4d4d'; let emoji = '🔴';
                 if (incidencia < 15) { color = '#ffd700'; emoji = '🟡'; }
                 else if (incidencia <= 30) { color = '#33ffaa'; emoji = '🟢'; }
-                if (residualCash <= 0) { color = '#666'; emoji = '⚫'; incidencia = 0; }
+                if (residualAbs <= 0) { color = '#666'; emoji = '⚫'; incidencia = 0; }
                 oIncidencia.innerHTML = `${incidencia.toFixed(1)}% <span style="margin-left:4px;">${emoji}</span>`;
                 oIncidencia.style.color = color;
             }
@@ -837,8 +837,7 @@
             const b = state.breakdown;
             if (!b || b.sales <= 0) return;
             const segments = [
-                { label: 'Terreno (Cash)', value: b.terreno, color: '#33ffaa' },
-                { label: 'Canje (m²)', value: b.canje, color: '#f0c040' },
+                { label: 'Costo del Terreno (Total)', value: b.terreno + b.canje, color: '#33ffaa' },
                 { label: 'Construcción', value: b.construction, color: '#ff8c42' },
                 { label: 'Honorarios Prof.', value: b.fees, color: '#a855f7' },
                 { label: 'Impuestos y Comerc.', value: b.taxMkt, color: '#ef4444' },
@@ -982,11 +981,24 @@
 
             // Touch Events
             const getPinchDist = (t1, t2) => Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
+            let touchWarning = null;
+            const showWarning = () => {
+                if (!touchWarning) {
+                    touchWarning = document.createElement('div');
+                    touchWarning.className = 'touch-warning';
+                    touchWarning.innerText = 'Usá dos dedos para rotar/mover';
+                    root.appendChild(touchWarning);
+                }
+                touchWarning.style.opacity = '1';
+                setTimeout(() => { if (touchWarning) touchWarning.style.opacity = '0'; }, 1500);
+            };
             
             root.addEventListener('touchstart', e => {
                 if(e.touches.length === 1) {
                     o.drag = true; o.btn = 0; o.lx = e.touches[0].clientX; o.ly = e.touches[0].clientY;
+                    if(window.innerWidth <= 1024) showWarning();
                 } else if(e.touches.length === 2) {
+                    e.preventDefault();
                     o.drag = false; o.pdist = getPinchDist(e.touches[0], e.touches[1]);
                 }
             }, {passive: false});
@@ -995,12 +1007,20 @@
             
             root.addEventListener('touchmove', e => {
                 if (e.touches.length === 1 && o.drag) {
-                    e.preventDefault(); // Prevent page scroll when interacting with canvas
+                    if (window.innerWidth > 1024) {
+                        e.preventDefault(); // Prevent page scroll on desktop
+                        let dx = e.touches[0].clientX - o.lx, dy = e.touches[0].clientY - o.ly;
+                        if (is3D && o.btn === 0) { o.rz -= dx * 0.5; o.rx -= dy * 0.5; o.rx = Math.max(0, Math.min(o.rx, 90)); } else { o.x += dx / o.sc; o.y += dy / o.sc; }
+                        o.lx = e.touches[0].clientX; o.ly = e.touches[0].clientY; apply();
+                    }
+                    // Allow native scroll on mobile, do nothing
+                } else if (e.touches.length === 2) {
+                    e.preventDefault(); // Prevent native pinch-zoom and scroll
+                    
                     let dx = e.touches[0].clientX - o.lx, dy = e.touches[0].clientY - o.ly;
                     if (is3D && o.btn === 0) { o.rz -= dx * 0.5; o.rx -= dy * 0.5; o.rx = Math.max(0, Math.min(o.rx, 90)); } else { o.x += dx / o.sc; o.y += dy / o.sc; }
-                    o.lx = e.touches[0].clientX; o.ly = e.touches[0].clientY; apply();
-                } else if (e.touches.length === 2) {
-                    e.preventDefault(); // Prevent native pinch-zoom
+                    o.lx = e.touches[0].clientX; o.ly = e.touches[0].clientY;
+                    
                     let ndist = getPinchDist(e.touches[0], e.touches[1]);
                     let diff = ndist - o.pdist;
                     o.sc = Math.min(Math.max(0.3, o.sc + diff * 0.01), 4);
@@ -1140,6 +1160,34 @@
             setTimeout(() => { splash.style.display = 'none'; }, 800);
         };
 
+        const marketRanges = {
+            'sl-margin': [20, 25],
+            'sl-soft-fees': [4, 8],
+            'sl-soft-mkt': [3, 5],
+            'sl-soft-tax': [1, 2],
+            'sl-canje': [10, 30]
+        };
+        function updateSliderTracks() {
+            Object.keys(marketRanges).forEach(id => {
+                let sl = document.getElementById(id);
+                if (!sl) return;
+                let min = parseFloat(sl.min), max = parseFloat(sl.max);
+                let [tmin, tmax] = marketRanges[id];
+                let pStart = ((tmin - min) / (max - min)) * 100;
+                let pEnd = ((tmax - min) / (max - min)) * 100;
+                sl.style.setProperty('--track-start', `${pStart}%`);
+                sl.style.setProperty('--track-end', `${pEnd}%`);
+                
+                if (!sl.nextElementSibling || !sl.nextElementSibling.classList.contains('range-label')) {
+                    let lbl = document.createElement('div');
+                    lbl.className = 'range-label active';
+                    lbl.innerText = `Rango típico de mercado: ${tmin}% - ${tmax}%`;
+                    sl.parentNode.appendChild(lbl);
+                    sl.parentNode.style.flexWrap = 'wrap';
+                }
+            });
+        }
+        updateSliderTracks();
         calc();
     </script>
 </body>
