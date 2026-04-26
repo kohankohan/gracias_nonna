@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div id="splash" class="splash-screen">
@@ -28,7 +30,8 @@
 
         <div class="sidebar-content">
             <div class="section">
-                <h2 style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 10px;">
+                <h2
+                    style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 10px;">
                     Localización del Terreno
                     <div id="search-loader" class="loader"></div>
                 </h2>
@@ -36,7 +39,8 @@
                     <input type="text" id="in-search" placeholder="Ingrese calle y altura..." autocomplete="off">
                     <div class="search-results" id="res-search"></div>
                 </div>
-                <p style="font-size: 0.65rem; color: #666; margin-top:5px;">Datos normalizados vía API oficial USIG GCBA.</p>
+                <p style="font-size: 0.65rem; color: #666; margin-top:5px;">Datos normalizados vía API oficial USIG
+                    GCBA.</p>
             </div>
 
             <div class="section-accordion">
@@ -48,7 +52,8 @@
                             <div class="control-header">
                                 <div class="label-wrap">
                                     <span>Ancho de Frente (m)</span>
-                                    <span class="tooltip-icon" data-tooltip="Longitud del frente del lote sobre la línea municipal.">?</span>
+                                    <span class="tooltip-icon"
+                                        data-tooltip="Longitud del frente del lote sobre la línea municipal.">?</span>
                                 </div>
                             </div>
                             <div class="slider-input-group">
@@ -60,7 +65,8 @@
                             <div class="control-header">
                                 <div class="label-wrap">
                                     <span>Fondo Total Lote (m)</span>
-                                    <span class="tooltip-icon" data-tooltip="Profundidad total del lote desde el frente hasta el eje de fondo.">?</span>
+                                    <span class="tooltip-icon"
+                                        data-tooltip="Profundidad total del lote desde el frente hasta el eje de fondo.">?</span>
                                 </div>
                             </div>
                             <div class="slider-input-group">
@@ -72,7 +78,8 @@
                             <div class="control-header">
                                 <div class="label-wrap">
                                     <span>Fondo Edificable LFI (m)</span>
-                                    <span class="tooltip-icon" data-tooltip="Línea de Frente Interno (CUR). Define el límite de profundidad edificable. Se recomienda verificar el valor exacto para la manzana específica en Ciudad3D.">?</span>
+                                    <span class="tooltip-icon"
+                                        data-tooltip="Línea de Frente Interno (CUR). Define el límite de profundidad edificable. Se recomienda verificar el valor exacto para la manzana específica en Ciudad3D.">?</span>
                                 </div>
                             </div>
                             <div class="slider-input-group">
@@ -84,7 +91,8 @@
                             <div class="control-header">
                                 <div class="label-wrap">
                                     <span>Vuelo de Balcones (m)</span>
-                                    <span class="tooltip-icon" data-tooltip="Medida de la saliente de los balcones. El Código suele permitir hasta 1.20m según el ancho de calle.">?</span>
+                                    <span class="tooltip-icon"
+                                        data-tooltip="Medida de la saliente de los balcones. El Código suele permitir hasta 1.20m según el ancho de calle.">?</span>
                                 </div>
                             </div>
                             <div class="slider-input-group">
@@ -97,15 +105,18 @@
                                 <div class="label-wrap">
                                     <span>Zonificación (Código Urbanístico)</span>
                                     <div id="zone-loader-icon" class="loader"></div>
-                                    <span class="tooltip-icon" id="zone-tooltip" data-tooltip="Define la normativa de altura y capacidad constructiva del lote. Se recomienda verificar la zonificación exacta en Ciudad3D.">?</span>
+                                    <span class="tooltip-icon" id="zone-tooltip"
+                                        data-tooltip="Define la normativa de altura y capacidad constructiva del lote. Se recomienda verificar la zonificación exacta en Ciudad3D.">?</span>
                                 </div>
                             </div>
                             <select id="sel-zone">
                                 <option value="USAB0">USAB 0 (PB + 2 Niveles)</option>
                                 <option value="USAB1">USAB 1 (PB + 3 Niveles)</option>
                                 <option value="USAB2" selected>USAB 2 (PB + 4 Niveles)</option>
-                                <option value="USAM" data-map="USAM, Sustentabilidad Media">USAM (PB + 5 + 1 Retiro)</option>
-                                <option value="USAA" data-map="USAA, Sustentabilidad Alta">USAA (PB + 7 + 2 Retiros)</option>
+                                <option value="USAM" data-map="USAM, Sustentabilidad Media">USAM (PB + 5 + 1 Retiro)
+                                </option>
+                                <option value="USAA" data-map="USAA, Sustentabilidad Alta">USAA (PB + 7 + 2 Retiros)
+                                </option>
                                 <option value="CM" data-map="CM, Corredor Medio">CM (10 + 2 R)</option>
                                 <option value="CA" data-map="CA, Corredor Alto">CA (12 + 2 R)</option>
                             </select>
@@ -115,7 +126,8 @@
                             <div class="control-header">
                                 <div class="label-wrap">
                                     <span>Eficiencia de Planta (%)</span>
-                                    <span class="tooltip-icon" data-tooltip="Relación entre Superficie Vendible (propias) y Superficie Total Construida (incluye núcleos y comunes). El estándar suele estar alrededor del 80%.">?</span>
+                                    <span class="tooltip-icon"
+                                        data-tooltip="Relación entre Superficie Vendible (propias) y Superficie Total Construida (incluye núcleos y comunes). El estándar suele estar alrededor del 80%.">?</span>
                                 </div>
                             </div>
                             <div class="slider-input-group">
@@ -134,7 +146,8 @@
                             <div class="control-header">
                                 <div class="label-wrap">
                                     <span>Costo Directo Obra (USD/m²)</span>
-                                    <span class="tooltip-icon" data-tooltip="Costo de construcción por m². Incluye materiales y mano de obra, pero no honorarios ni tasas.">?</span>
+                                    <span class="tooltip-icon"
+                                        data-tooltip="Costo de construcción por m². Incluye materiales y mano de obra, pero no honorarios ni tasas. Consultar referencias en cpau.org o copaipa.org.ar">?</span>
                                 </div>
                             </div>
                             <div class="slider-input-group">
@@ -146,7 +159,8 @@
                             <div class="control-header">
                                 <div class="label-wrap">
                                     <span>Precio Venta Promedio (USD/m²)</span>
-                                    <span class="tooltip-icon" data-tooltip="Valor de mercado promedio por m² para unidades funcionales a estrenar en la zona.">?</span>
+                                    <span class="tooltip-icon"
+                                        data-tooltip="Valor de mercado promedio por m² para unidades funcionales a estrenar en la zona. Fuente recomendada: reporteinmobiliario.com">?</span>
                                 </div>
                             </div>
                             <div class="slider-input-group">
@@ -158,7 +172,8 @@
                             <div class="control-header">
                                 <div class="label-wrap">
                                     <span>Margen Objetivo (%)</span>
-                                    <span class="tooltip-icon" data-tooltip="Rentabilidad esperada por el desarrollador sobre el volumen total de ventas. El estándar del mercado suele oscilar entre el 20% y el 25%.">?</span>
+                                    <span class="tooltip-icon"
+                                        data-tooltip="Rentabilidad esperada por el desarrollador sobre el volumen total de ventas. El estándar del mercado suele oscilar entre el 20% y el 25%.">?</span>
                                 </div>
                             </div>
                             <div class="slider-input-group">
@@ -177,7 +192,8 @@
                             <div class="control-header">
                                 <div class="label-wrap">
                                     <span>Honorarios Prof. CPAU (%)</span>
-                                    <span class="tooltip-icon" data-tooltip="Honorarios de Proyecto y Dirección de Obra. El porcentaje se aplica sobre el Costo Directo de Construcción según estándares del CPAU.">?</span>
+                                    <span class="tooltip-icon"
+                                        data-tooltip="Honorarios de Proyecto y Dirección de Obra. El porcentaje se aplica sobre el Costo Directo de Construcción según estándares del CPAU.">?</span>
                                 </div>
                             </div>
                             <div class="slider-input-group">
@@ -189,7 +205,8 @@
                             <div class="control-header">
                                 <div class="label-wrap">
                                     <span>Marketing y Comercializ. (%)</span>
-                                    <span class="tooltip-icon" data-tooltip="Gastos de venta, publicidad y comisiones inmobiliarias. El estándar típico en Buenos Aires suele ser del 3% sobre el valor total de ventas.">?</span>
+                                    <span class="tooltip-icon"
+                                        data-tooltip="Gastos de venta, publicidad y comisiones inmobiliarias. El estándar típico en Buenos Aires suele ser del 3% sobre el valor total de ventas.">?</span>
                                 </div>
                             </div>
                             <div class="slider-input-group">
@@ -201,7 +218,8 @@
                             <div class="control-header">
                                 <div class="label-wrap">
                                     <span>Impuestos y Permisos (%)</span>
-                                    <span class="tooltip-icon" data-tooltip="Tasas por derechos de construcción, sellados de contratos y permisos municipales. El rango suele estar entre el 1% y 2%.">?</span>
+                                    <span class="tooltip-icon"
+                                        data-tooltip="Tasas por derechos de construcción, sellados de contratos y permisos municipales. El rango suele estar entre el 1% y 2%.">?</span>
                                 </div>
                             </div>
                             <div class="slider-input-group">
@@ -219,12 +237,17 @@
                         <div class="danger-zone">
                             <label>
                                 <input type="checkbox" id="chk-plusv"> Aplicar Derecho de Incidencia
-                                <span class="tooltip-icon" data-tooltip="Impuesto GCBA (Ley 6062). Fórmula: (m² CUR - m² CPU) * Alícuota * Incidencia.">?</span>
+                                <span class="tooltip-icon"
+                                    data-tooltip="Impuesto GCBA (Ley 6062). Fórmula: (m² CUR - m² CPU) * Alícuota * Incidencia. Verificar en ciudad3d.buenosaires.gob.ar">?</span>
                             </label>
                             <div id="plusv-collapsible" style="display:none; margin-top:10px;">
-                                <div class="control-header"><span style="font-size: 0.75rem;">Estimación Manual (USD)</span></div>
+                                <div class="control-header"><span style="font-size: 0.75rem;">Estimación Manual
+                                        (USD)</span></div>
                                 <input type="number" id="num-plusv" value="25000" step="1000" style="width: 100%;">
-                                <a href="https://mapa.buenosaires.gob.ar/comunidad/index.html?capas=incidencias_uva" target="_blank" style="font-size:0.65rem; color:var(--accent); display:block; margin-top:8px; text-decoration:none;">🔗 Consultar Mapa de Incidencias</a>
+                                <a href="https://mapa.buenosaires.gob.ar/comunidad/index.html?capas=incidencias_uva"
+                                    target="_blank"
+                                    style="font-size:0.65rem; color:var(--accent); display:block; margin-top:8px; text-decoration:none;">🔗
+                                    Consultar Mapa de Incidencias</a>
                             </div>
                         </div>
                     </div>
@@ -238,7 +261,8 @@
                             <div class="control-header">
                                 <div class="label-wrap">
                                     <span>Porcentaje de Canje de m² (%)</span>
-                                    <span class="tooltip-icon" data-tooltip="Valor del terreno cobrado en m² del edificio. Se suelen valuar a precio de venta final, aunque en ocasiones no se cargan beneficios ni comisiones de venta al propietario.">?</span>
+                                    <span class="tooltip-icon"
+                                        data-tooltip="Valor del terreno cobrado en m² del edificio. Se suelen valuar a precio de venta final, aunque en ocasiones no se cargan beneficios ni comisiones de venta al propietario.">?</span>
                                 </div>
                             </div>
                             <div class="slider-input-group">
@@ -267,13 +291,24 @@
                     <div class="metric-val" id="out-resid">--</div>
                 </div>
 
+                <div class="incidencia-box" style="background-color: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); padding: 12px; border-radius: 6px; margin-top: -2px; font-size: 0.8rem;">
+                    <div class="label-wrap" style="justify-content: space-between; width: 100%;">
+                        <span>Incidencia <span class="tooltip-icon" data-tooltip="Porcentaje del precio final de venta que se destina al terreno. El rango típico en CABA es 15%-30%. Menos de 15% (amarillo) indica que tu terreno podría estar subvaluado.">?</span></span>
+                        <span id="out-incidencia" style="font-weight: 700;">--</span>
+                    </div>
+                </div>
+
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
                     <button class="btn-link" id="btn-explain">Detalle del Cálculo</button>
-                    <button class="btn-link" id="btn-stress-pro" style="color: var(--accent);">Stress Test del Terreno</button>
+                    <button class="btn-link" id="btn-stress-pro" style="color: var(--accent);">Stress Test del
+                        Terreno</button>
                 </div>
-                <button class="btn-link" id="btn-print-pdf" style="background: rgba(255,255,255,0.05); color:#fff; border-color:#444;">Exportar Informe PDF</button>
+                <button class="btn-link" id="btn-print-pdf"
+                    style="background: rgba(255,255,255,0.05); color:#fff; border-color:#444;">Exportar Informe
+                    PDF</button>
                 <div class="disclaimer-sidebar">
-                    Todos los valores son informativos y de ninguna manera reflejan una tasación profesional ni una valuación objetiva.
+                    Todos los valores son informativos y de ninguna manera reflejan una tasación profesional ni una
+                    valuación objetiva.
                 </div>
             </div>
         </div>
@@ -318,20 +353,31 @@
             <h2>Podrías pedir por tu terreno:</h2>
             <div class="modal-body">
                 <div style="text-align:center; margin-bottom: 25px;">
-                    <div style="font-size:0.7rem; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">Remanente en Efectivo (Cash)</div>
-                    <div id="celebrate-amount" style="font-size:3.2rem; font-weight:800; color:var(--text-main);">--</div>
+                    <div style="font-size:0.7rem; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">
+                        Remanente en Efectivo (Cash)</div>
+                    <div id="celebrate-amount" style="font-size:3.2rem; font-weight:800; color:var(--text-main);">--
+                    </div>
                 </div>
-                <div id="celebrate-canje-block" style="display:none; border-top:1px solid #333; padding-top:20px; text-align:center;">
-                    <div style="font-size:0.7rem; text-transform:uppercase; color:#aaa; margin-bottom:8px;">Aporte en m² (Canje)</div>
-                    <div id="celebrate-canje-m2" style="font-size:2.2rem; font-weight:800; color:var(--canje-color);">--</div>
+                <div id="celebrate-canje-block"
+                    style="display:none; border-top:1px solid #333; padding-top:20px; text-align:center;">
+                    <div style="font-size:0.7rem; text-transform:uppercase; color:#aaa; margin-bottom:8px;">Aporte en m²
+                        (Canje)</div>
+                    <div id="celebrate-canje-m2" style="font-size:2.2rem; font-weight:800; color:var(--canje-color);">--
+                    </div>
                     <p id="celebrate-canje-sub" style="font-size:0.8rem; color:#888; margin-top:8px;"></p>
                 </div>
-                <p style="font-size: 0.7rem; color: #666; margin-top: 25px; text-align: center; border-top: 1px solid #222; padding-top: 15px;">
-                    Todos los valores son informativos y de ninguna manera reflejan una tasación profesional ni una valuación objetiva.
+                <p
+                    style="font-size: 0.7rem; color: #666; margin-top: 25px; text-align: center; border-top: 1px solid #222; padding-top: 15px;">
+                    Todos los valores son informativos y de ninguna manera reflejan una tasación profesional ni una
+                    valuación objetiva.
                 </p>
             </div>
-            <button class="btn-primary" style="margin-bottom:10px;" onclick="document.getElementById('modal-celebrate').style.display='none'; document.getElementById('btn-explain').click();">Ver Detalle del Cálculo</button>
-            <button class="btn-primary" style="background:transparent; border:1px solid var(--accent); color:var(--accent);" onclick="document.getElementById('modal-celebrate').style.display='none'">¡Gracias, Nonna!</button>
+            <button class="btn-primary" style="margin-bottom:10px;"
+                onclick="document.getElementById('modal-celebrate').style.display='none'; document.getElementById('btn-explain').click();">Ver
+                Detalle del Cálculo</button>
+            <button class="btn-primary"
+                style="background:transparent; border:1px solid var(--accent); color:var(--accent);"
+                onclick="document.getElementById('modal-celebrate').style.display='none'">¡Gracias, Nonna!</button>
         </div>
     </div>
 
@@ -341,23 +387,37 @@
             <div class="modal-body">
                 <table>
                     <tr>
-                        <td><span class="tip" data-tooltip="Valor total de mercado de todos los metros cuadrados vendibles del proyecto.">Ventas Totales Proyectadas</span></td>
+                        <td><span class="tip"
+                                data-tooltip="Valor total de mercado de todos los metros cuadrados vendibles del proyecto.">Ventas
+                                Totales Proyectadas</span></td>
                         <td id="t-v" style="text-align:right;"></td>
                     </tr>
                     <tr>
-                        <td><span style="color:var(--danger); font-weight:bold; margin-right:5px;">-</span> <span class="tip" data-tooltip="Costo directo de obra (materiales y mano de obra) multiplicado por los metros totales de obra para la superficie construible y semicubierta (balcones)">Costo de Construcción (Hard Costs)</span></td>
+                        <td><span style="color:var(--danger); font-weight:bold; margin-right:5px;">-</span> <span
+                                class="tip"
+                                data-tooltip="Costo directo de obra (materiales y mano de obra) multiplicado por los metros totales de obra para la superficie construible y semicubierta (balcones)">Costo
+                                de Construcción (Hard Costs)</span></td>
                         <td id="t-co" style="text-align:right;"></td>
                     </tr>
                     <tr>
-                        <td><span style="color:var(--danger); font-weight:bold; margin-right:5px;">-</span> <span class="tip" data-tooltip="Honorarios CPAU calculados sobre el Costo Físico de Obra. Proyecto y Dirección de Obra. Calculado como un porcentaje sobre el Costo Directo de Construcción">Honorarios Profesionales</span></td>
+                        <td><span style="color:var(--danger); font-weight:bold; margin-right:5px;">-</span> <span
+                                class="tip"
+                                data-tooltip="Honorarios CPAU calculados sobre el Costo Físico de Obra. Proyecto y Dirección de Obra. Calculado como un porcentaje sobre el Costo Directo de Construcción">Honorarios
+                                Profesionales</span></td>
                         <td id="t-soft" style="text-align:right;"></td>
                     </tr>
                     <tr>
-                        <td><span style="color:var(--danger); font-weight:bold; margin-right:5px;">-</span> <span class="tip" data-tooltip="Incluye Derecho de Incidencia (Plusvalía), sellados municipales y gastos de publicidad y comisiones de venta.">Impuestos, Permisos y Comercializ.</span></td>
+                        <td><span style="color:var(--danger); font-weight:bold; margin-right:5px;">-</span> <span
+                                class="tip"
+                                data-tooltip="Incluye Derecho de Incidencia (Plusvalía), sellados municipales y gastos de publicidad y comisiones de venta.">Impuestos,
+                                Permisos y Comercializ.</span></td>
                         <td id="t-tax" style="text-align:right;"></td>
                     </tr>
                     <tr>
-                        <td><span style="color:var(--danger); font-weight:bold; margin-right:5px;">-</span> <span class="tip" data-tooltip="Rentabilidad esperada por el desarrollador sobre el volumen total de ventas. El estándar del mercado suele oscilar entre el 20% y el 25%">Margen Operativo Bruto</span></td>
+                        <td><span style="color:var(--danger); font-weight:bold; margin-right:5px;">-</span> <span
+                                class="tip"
+                                data-tooltip="Rentabilidad esperada por el desarrollador sobre el volumen total de ventas. El estándar del mercado suele oscilar entre el 20% y el 25%">Margen
+                                Operativo Bruto</span></td>
                         <td id="t-b" style="text-align:right;"></td>
                     </tr>
                     <tr class="total">
@@ -365,7 +425,10 @@
                         <td id="t-res-abs" style="color:#fff; text-align:right;"></td>
                     </tr>
                     <tr>
-                        <td><span style="color:var(--danger); font-weight:bold; margin-right:5px;">-</span> <span class="tip" data-tooltip="Valor del terreno cobrado en m² del edificio. Se suele valuar a precio de venta final reduciendo el desembolso inicial de efectivo.">Aporte de m² (Canje)</span></td>
+                        <td><span style="color:var(--danger); font-weight:bold; margin-right:5px;">-</span> <span
+                                class="tip"
+                                data-tooltip="Valor del terreno cobrado en m² del edificio. Se suele valuar a precio de venta final reduciendo el desembolso inicial de efectivo.">Aporte
+                                de m² (Canje)</span></td>
                         <td id="t-canjeV" style="color:var(--canje-color); text-align:right;"></td>
                     </tr>
                     <tr class="total">
@@ -374,10 +437,33 @@
                     </tr>
                 </table>
                 <p style="font-size: 0.7rem; color: #666; margin-top: 15px; line-height: 1.3;">
-                    * Este cálculo es una simulación basada en coeficientes de mercado. Todos los valores son informativos y no constituyen una tasación profesional ni una valuación objetiva.
+                    * Este cálculo es una simulación basada en coeficientes de mercado. Todos los valores son
+                    informativos y no constituyen una tasación profesional ni una valuación objetiva.
                 </p>
+                <div class="donut-chart-container">
+                    <canvas id="chart-explain" width="220" height="220"></canvas>
+                    <div id="chart-explain-legend" class="donut-legend"></div>
+                </div>
+                <a href="#" id="link-residual-edu" style="font-size:0.8rem; color:var(--accent); display:block; text-align:center; margin-top:15px; text-decoration:none;">📖 ¿Qué es el Método Residual Estático?</a>
             </div>
-            <button class="btn-primary" onclick="document.getElementById('modal-explain').style.display='none'">¡Gracias, Nonna!</button>
+            <button class="btn-primary"
+                onclick="document.getElementById('modal-explain').style.display='none'">¡Gracias, Nonna!</button>
+        </div>
+    </div>
+
+    <div id="modal-residual" class="modal-overlay">
+        <div class="modal-content" style="max-width: 650px;">
+            <h2>¿Qué es el Método Residual Estático?</h2>
+            <div class="modal-body">
+                <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px;"><strong>El Método Residual es la herramienta estándar del mercado inmobiliario para determinar cuánto vale un terreno con potencial de desarrollo.</strong> Su lógica es simple: se proyectan los ingresos totales que generaría un edificio nuevo en ese lote, y se le restan todos los costos necesarios para construirlo, comercializarlo y obtener una rentabilidad razonable. Lo que &ldquo;sobra&rdquo; &mdash; el <em>residuo</em> &mdash; es el valor máximo que un desarrollador racional pagaría por el terreno.</p>
+                <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px;"><strong>¿Por qué &ldquo;estático&rdquo;?</strong> Porque este modelo calcula todos los valores a precios de hoy, sin considerar el efecto del tiempo sobre el dinero (inflación, costo financiero, plazos de obra). Existe una versión más sofisticada &mdash; el <em>Método Residual Dinámico</em> &mdash; que descuenta flujos futuros (DCF), pero requiere modelar cronogramas de obra y curvas de venta que exceden el alcance de esta herramienta.</p>
+                <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;"><strong>En la práctica</strong>, el valor residual funciona como un &ldquo;techo de negociación&rdquo;: representa el precio máximo al que la operación cierra con números positivos para el desarrollador. Por encima de ese valor, el proyecto deja de ser viable. Por debajo, hay margen para negociar.</p>
+                <div class="donut-chart-container">
+                    <canvas id="chart-edu" width="220" height="220"></canvas>
+                    <div id="chart-edu-legend" class="donut-legend"></div>
+                </div>
+            </div>
+            <button class="btn-primary" onclick="document.getElementById('modal-residual').style.display='none'">¡Gracias, Nonna!</button>
         </div>
     </div>
 
@@ -386,10 +472,12 @@
             <h2>Stress Test del Terreno (Manual de Negociación)</h2>
             <div class="modal-body">
                 <p id="stress-narrative" style="font-size:0.9rem; margin-bottom:20px;">Cargando análisis...</p>
-                
+
                 <div class="valuation-range-container">
                     <div class="valuation-range-bar">
-                        <div class="range-marker" id="marker-base"><div class="marker-label">CASO BASE</div></div>
+                        <div class="range-marker" id="marker-base">
+                            <div class="marker-label">CASO BASE</div>
+                        </div>
                     </div>
                     <div class="range-extremos">
                         <span id="stress-min-val">Min: --</span>
@@ -398,9 +486,11 @@
                 </div>
 
                 <div class="sensitivity-grid" id="modal-sens-grid"></div>
-                <p style="font-size:0.75rem; color:#666; margin-top:20px;">* Los valores mostrados representan el <strong>Efectivo Neto (Cash)</strong> habiendo ya descontado el porcentaje de m² canjeables.</p>
+                <p style="font-size:0.75rem; color:#666; margin-top:20px;">* Los valores mostrados representan el
+                    <strong>Efectivo Neto (Cash)</strong> habiendo ya descontado el porcentaje de m² canjeables.</p>
             </div>
-            <button class="btn-primary" onclick="document.getElementById('modal-stress').style.display='none'">¡Gracias, Nonna!</button>
+            <button class="btn-primary" onclick="document.getElementById('modal-stress').style.display='none'">¡Gracias,
+                Nonna!</button>
         </div>
     </div>
 
@@ -413,27 +503,60 @@
             </div>
             <div id="report-date" style="text-align:right; font-weight:bold;"></div>
         </div>
-        
+
         <div class="report-section">
             <h2>Identificación del Inmueble</h2>
             <table class="report-table">
-                <tr><td>Ubicación</td><td id="r-addr">--</td></tr>
-                <tr><td>Zonificación (CUR)</td><td id="r-zone">--</td></tr>
-                <tr><td>Superficie Vendible Est.</td><td><span id="r-sellable">--</span> m²</td></tr>
+                <tr>
+                    <td>Ubicación</td>
+                    <td id="r-addr">--</td>
+                </tr>
+                <tr>
+                    <td>Zonificación (CUR)</td>
+                    <td id="r-zone">--</td>
+                </tr>
+                <tr>
+                    <td>Superficie Vendible Est.</td>
+                    <td><span id="r-sellable">--</span> m²</td>
+                </tr>
             </table>
         </div>
 
         <div class="report-section">
             <h2>Balance de Inversión Proyectado</h2>
-            <table class="report-table">
-                <tr><td>Ventas Totales Estimadas</td><td id="r-v"></td></tr>
-                <tr><td>Costo de Producción (Hard + Soft)</td><td id="r-c"></td></tr>
-                <tr><td>Gravámenes (Plusvalía)</td><td id="r-p"></td></tr>
-                <tr><td>Utilidad del Desarrollador</td><td id="r-m"></td></tr>
-                <tr class="total-row"><td>VALOR RESIDUAL TOTAL</td><td id="r-rt"></td></tr>
-                <tr><td>Aporte en m² (Canje)</td><td id="r-cj"></td></tr>
-                <tr class="total-row" style="color:#000;"><td>VALOR RESULTANTE EN EFECTIVO</td><td id="r-rc"></td></tr>
-            </table>
+            <div style="display:flex; align-items:flex-start; gap:20px;">
+                <table class="report-table" style="flex:1;">
+                    <tr>
+                        <td>Ventas Totales Estimadas</td>
+                        <td id="r-v"></td>
+                    </tr>
+                    <tr>
+                        <td>Costo de Producción (Hard + Soft)</td>
+                        <td id="r-c"></td>
+                    </tr>
+                    <tr>
+                        <td>Gravámenes (Plusvalía)</td>
+                        <td id="r-p"></td>
+                    </tr>
+                    <tr>
+                        <td>Utilidad del Desarrollador</td>
+                        <td id="r-m"></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>VALOR RESIDUAL TOTAL</td>
+                        <td id="r-rt"></td>
+                    </tr>
+                    <tr>
+                        <td>Aporte en m² (Canje)</td>
+                        <td id="r-cj"></td>
+                    </tr>
+                    <tr class="total-row" style="color:#000;">
+                        <td>VALOR RESULTANTE EN EFECTIVO</td>
+                        <td id="r-rc"></td>
+                    </tr>
+                </table>
+                <div id="p-chart" style="width: 150px; text-align:center;"></div>
+            </div>
         </div>
 
         <div class="report-section">
@@ -441,7 +564,9 @@
             <div class="report-viz-container">
                 <div class="print-3d-box" id="p-3d">
                     <!-- Cloned 3D View will be injected here -->
-                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#ccc; font-size:8pt;">Vista Axonométrica 3D</div>
+                    <div
+                        style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#ccc; font-size:8pt;">
+                        Vista Axonométrica 3D</div>
                 </div>
                 <div class="print-2d-box">
                     <div class="print-canvas-sub" id="p-plan">
@@ -471,7 +596,10 @@
         </div>
 
         <div class="report-footer">
-            <p><strong>Descargo de Responsabilidad (Disclaimer):</strong> Este informe técnico constituye una simulación matemática basada en los parámetros y supuestos ingresados por el usuario. Todos los valores presentados son meramente informativos y de ninguna manera reflejan una tasación profesional, una valuación objetiva ni comprometen la viabilidad real o comercial de un proyecto inmobiliario.</p>
+            <p><strong>Descargo de Responsabilidad (Disclaimer):</strong> Este informe técnico constituye una simulación
+                matemática basada en los parámetros y supuestos ingresados por el usuario. Todos los valores presentados
+                son meramente informativos y de ninguna manera reflejan una tasación profesional, una valuación objetiva
+                ni comprometen la viabilidad real o comercial de un proyecto inmobiliario.</p>
         </div>
     </div>
 
@@ -482,8 +610,8 @@
 
         const zones = {
             'USAB0': { std: 3, ret: 0 }, 'USAB1': { std: 4, ret: 0 }, 'USAB2': { std: 5, ret: 0 },
-            'USAM':  { std: 6, ret: 1 }, 'USAA':  { std: 8, ret: 2 },
-            'CM':    { std: 11, ret: 2 }, 'CA':    { std: 13, ret: 2 }
+            'USAM': { std: 6, ret: 1 }, 'USAA': { std: 8, ret: 2 },
+            'CM': { std: 11, ret: 2 }, 'CA': { std: 13, ret: 2 }
         };
 
         const inputs = {
@@ -506,14 +634,42 @@
         const cntPlusv = document.getElementById('plusv-collapsible');
         const addrDisp = document.getElementById('display-address');
 
-        const state = { 
+        const state = {
             residualCash: 0, residualAbs: 0, canjeM2: 0,
             strResCash: "", strResAbs: "", strCanjeVal: ""
         };
 
         // UI Sync setup
-        Object.values(inputs).forEach(g => {
-            if(g.sl && g.num) {
+        inputs.d.sl.addEventListener('input', e => { 
+            inputs.d.num.value = e.target.value; 
+            inputs.lfi.sl.max = e.target.value;
+            if(parseFloat(inputs.lfi.num.value) > parseFloat(e.target.value)) {
+                inputs.lfi.num.value = e.target.value;
+                inputs.lfi.sl.value = e.target.value;
+            }
+            calc(); 
+        });
+        inputs.d.num.addEventListener('input', e => { 
+            inputs.d.sl.value = e.target.value; 
+            inputs.lfi.sl.max = e.target.value;
+            if(parseFloat(inputs.lfi.num.value) > parseFloat(e.target.value)) {
+                inputs.lfi.num.value = e.target.value;
+                inputs.lfi.sl.value = e.target.value;
+            }
+            calc(); 
+        });
+        inputs.lfi.sl.addEventListener('input', e => { inputs.lfi.num.value = e.target.value; calc(); });
+        inputs.lfi.num.addEventListener('input', e => { 
+            let limit = parseFloat(inputs.d.num.value);
+            if(parseFloat(e.target.value) > limit) {
+                e.target.value = limit;
+            }
+            inputs.lfi.sl.value = e.target.value; 
+            calc(); 
+        });
+
+        Object.values(inputs).forEach((g, k) => {
+            if (g.sl && g.num && k !== 'd' && k !== 'lfi') {
                 g.sl.addEventListener('input', e => { g.num.value = e.target.value; calc(); });
                 g.num.addEventListener('input', e => { g.sl.value = e.target.value; calc(); });
             }
@@ -534,7 +690,7 @@
 
         function secureNum(val, def = 0) { let p = parseFloat(val); return isNaN(p) ? def : p; }
 
-        let sync3D = null; 
+        let sync3D = null;
 
         function calc() {
             let w = secureNum(inputs.w.num.value);
@@ -558,23 +714,24 @@
                 let gross = w * depth; buildableM2 += gross;
                 floors.push({ d: depth, level: lvl, rLevel: rLvl, grossM2: gross, netM2: gross * eff });
             };
-            for(let i=0; i<z.std; i++) addFloor(lfi, i, 0);
-            if(z.ret >= 1) { let r1d = Math.max(lfi - 2, 0); if(r1d > 0) addFloor(r1d, 0, 1); }
-            if(z.ret >= 2) { let r2d = Math.max(lfi - 4, 0); if(r2d > 0) addFloor(r2d, 0, 2); }
+            for (let i = 0; i < z.std; i++) addFloor(lfi, i, 0);
+            if (z.ret >= 1) { let r1d = Math.max(lfi - 2, 0); if (r1d > 0) addFloor(r1d, 0, 1); }
+            if (z.ret >= 2) { let r2d = Math.max(lfi - 4, 0); if (r2d > 0) addFloor(r2d, 0, 2); }
 
-            let hBalcony = (floors.length * w * balc * 2) * 0.5;
+            let balcFloors = Math.max(0, floors.length - 1); // Exclude PB
+            let hBalcony = (balcFloors * w * balc * 2) * 0.5;
             let m2TotSale = (buildableM2 * eff) + hBalcony;
-            let m2TotObra = buildableM2 + (floors.length * w * balc * 2);
+            let m2TotObra = buildableM2 + (balcFloors * w * balc * 2);
 
             let in_sales = m2TotSale * pSale;
             let out_cost = m2TotObra * cCost;
             let out_marg = in_sales * pMarg;
-            let valSoftF = out_cost * pSoftF; 
+            let valSoftF = out_cost * pSoftF;
             let valSoftM = in_sales * (pSoftM + pSoftT);
-            
+
             let residualAbs = in_sales - out_cost - plusv - out_marg - valSoftF - valSoftM;
             let reqCanjeM2 = m2TotSale * pCanj;
-            let reqCanjeValue = reqCanjeM2 * pSale; 
+            let reqCanjeValue = reqCanjeM2 * pSale;
             let residualCash = residualAbs - reqCanjeValue;
 
             state.residualCash = residualCash; state.residualAbs = residualAbs; state.canjeM2 = reqCanjeM2;
@@ -582,14 +739,25 @@
             state.strCanjeVal = fmtDollar.format(reqCanjeValue);
 
             document.getElementById('out-sellable').innerText = `${fmt.format(m2TotSale)} m²`;
-            document.getElementById('out-uf').innerText = `${fmt.format(reqCanjeM2)} m² (≈ ${fmtDec.format(reqCanjeM2/50)} Deptos.)`;
+            document.getElementById('out-uf').innerText = `${fmt.format(reqCanjeM2)} m² (≈ ${fmtDec.format(reqCanjeM2 / 50)} Deptos.)`;
             document.getElementById('out-uf-usd').innerText = `Valuación: ${state.strCanjeVal}`;
-            
+
             let cResid = document.getElementById('card-resid');
             let oResid = document.getElementById('out-resid');
             oResid.innerText = state.strResCash;
             cResid.style.background = residualCash >= 0 ? 'rgba(51, 255, 170, 0.05)' : 'rgba(255, 77, 77, 0.05)';
             cResid.style.borderColor = residualCash >= 0 ? 'var(--accent)' : 'var(--danger)';
+
+            let incidencia = (residualCash > 0 && in_sales > 0) ? (residualCash / in_sales) * 100 : 0;
+            let oIncidencia = document.getElementById('out-incidencia');
+            if (oIncidencia) {
+                let color = '#ff4d4d'; let emoji = '🔴';
+                if (incidencia < 15) { color = '#ffd700'; emoji = '🟡'; }
+                else if (incidencia <= 30) { color = '#33ffaa'; emoji = '🟢'; }
+                if (residualCash <= 0) { color = '#666'; emoji = '⚫'; incidencia = 0; }
+                oIncidencia.innerHTML = `${incidencia.toFixed(1)}% <span style="margin-left:4px;">${emoji}</span>`;
+                oIncidencia.style.color = color;
+            }
 
             // Update Explain Modals
             document.getElementById('t-v').innerText = fmtDollar.format(in_sales);
@@ -600,6 +768,9 @@
             document.getElementById('t-res-abs').innerText = fmtDollar.format(residualAbs);
             document.getElementById('t-canjeV').innerText = fmtDollar.format(reqCanjeValue);
             document.getElementById('t-res').innerText = state.strResCash;
+
+            state.breakdown = { construction: out_cost, fees: valSoftF, taxMkt: valSoftM + plusv, margin: out_marg, canje: reqCanjeValue, terreno: Math.max(residualCash, 0), sales: in_sales };
+            renderDonutCharts();
 
             renderGraphics(w, d, lfi, balc, floors);
             renderSensitivity(m2TotSale, m2TotObra, pSale, cCost, plusv, pMarg, reqCanjeValue, pSoftF, pSoftM, pSoftT, pCanj);
@@ -615,16 +786,16 @@
             // Header Row
             grid.appendChild(createCell('', 'header'));
             const costLabels = [
-                {l: "Costo +10%", t: "Escenario de inflación alta o imprevistos graves. Es el argumento principal del desarrollador para ofrecer menos."},
-                {l: "Costo BASE", t: "Presupuesto de construcción estándar (Hard Costs) para terminaciones de calidad media-alta en CABA."},
-                {l: "Costo -10%", t: "Representa una coyuntura de costos bajos en dólares o alta eficiencia operativa. Aumenta tu margen de negociación."}
+                { l: "Costo +10%", t: "Escenario de inflación alta o imprevistos graves. Es el argumento principal del desarrollador para ofrecer menos." },
+                { l: "Costo BASE", t: "Presupuesto de construcción estándar (Hard Costs) para terminaciones de calidad media-alta en CABA." },
+                { l: "Costo -10%", t: "Representa una coyuntura de costos bajos en dólares o alta eficiencia operativa. Aumenta tu margen de negociación." }
             ];
             costLabels.forEach(obj => grid.appendChild(createCell(obj.l, 'header', obj.t)));
 
             const marketLabels = [
-                {l: "Mercado +10%", t: "Escenario optimista. Nota cómo una suba moderada en el precio final dispara el valor de tu oferta cash."},
-                {l: "Mercado BASE", t: "Precio de venta actual para unidades funcionales a estrenar en esta zona. Escenario de equilibrio."},
-                {l: "Mercado -10%", t: "Escenario de enfriamiento. Un ajuste leve del precio de venta suele 'pulverizar' el valor residual del terreno."}
+                { l: "Mercado +10%", t: "Escenario optimista. Nota cómo una suba moderada en el precio final dispara el valor de tu oferta cash." },
+                { l: "Mercado BASE", t: "Precio de venta actual para unidades funcionales a estrenar en esta zona. Escenario de equilibrio." },
+                { l: "Mercado -10%", t: "Escenario de enfriamiento. Un ajuste leve del precio de venta suele 'pulverizar' el valor residual del terreno." }
             ];
 
             vs.forEach((vS, idx) => {
@@ -634,13 +805,13 @@
                     let inS = m2S * curS; let outC = m2O * curC;
                     let r = (inS - outC - plusv - (inS * pM) - (outC * psf) - (inS * (psm + pst))) - (m2S * pCanj * curS);
                     results.push(r);
-                    
+
                     let diff = baseR !== 0 ? ((r - baseR) / Math.abs(baseR) * 100).toFixed(0) : 0;
                     let cellTip = `Este escenario ${r >= baseR ? 'mejora' : 'reduce'} la oferta un ${r >= baseR ? '+' : ''}${diff}% respecto al caso base.`;
 
-                    let cls = 'val'; if(vS===1 && vC===1) cls += ' current';
+                    let cls = 'val'; if (vS === 1 && vC === 1) cls += ' current';
                     cls += r > 0 ? ' positive' : ' negative';
-                    grid.appendChild(createCell(Math.abs(r) > 1000000 ? (r/1000000).toFixed(1)+'M' : Math.round(r/1000)+'k', cls, cellTip));
+                    grid.appendChild(createCell(Math.abs(r) > 1000000 ? (r / 1000000).toFixed(1) + 'M' : Math.round(r / 1000) + 'k', cls, cellTip));
                 });
             });
 
@@ -649,8 +820,8 @@
             document.getElementById('stress-min-val').innerText = `Pessimista: ${fmtDollar.format(minR)}`;
             document.getElementById('stress-max-val').innerText = `Optimista: ${fmtDollar.format(maxR)}`;
             let pct = ((baseR - minR) / (maxR - minR)) * 100;
-            document.getElementById('marker-base').style.left = `${Math.min(Math.max(pct,0),100)}%`;
-            
+            document.getElementById('marker-base').style.left = `${Math.min(Math.max(pct, 0), 100)}%`;
+
             narr.innerHTML = `Este inmueble remite un valor de negociación base de <strong>${fmtDollar.format(baseR)}</strong> en efectivo. El análisis sugiere que el "piso" de oferta bajo stress de mercado es de <span style="color:var(--danger);">${fmtDollar.format(minR)}</span>. <br><br><strong>Análisis de Sensibilidad:</strong> Notarás que una caída del 10% en la venta impacta mucho más que un aumento del 10% en los costos; esto es el "apalancamiento residual". Tu terreno es el último en cobrar, por lo que cualquier variación en el precio final de los departamentos afecta directamente tu rentabilidad.`;
         }
         function createCell(t, c, tip) {
@@ -662,63 +833,124 @@
             return d;
         }
 
+        function renderDonutCharts() {
+            const b = state.breakdown;
+            if (!b || b.sales <= 0) return;
+            const segments = [
+                { label: 'Terreno (Cash)', value: b.terreno, color: '#33ffaa' },
+                { label: 'Canje (m²)', value: b.canje, color: '#f0c040' },
+                { label: 'Construcción', value: b.construction, color: '#ff8c42' },
+                { label: 'Honorarios Prof.', value: b.fees, color: '#a855f7' },
+                { label: 'Impuestos y Comerc.', value: b.taxMkt, color: '#ef4444' },
+                { label: 'Utilidad Desarrollador', value: b.margin, color: '#6b7280' }
+            ];
+            drawDonut('chart-explain', 'chart-explain-legend', segments);
+            drawDonut('chart-edu', 'chart-edu-legend', segments);
+        }
+
+        function drawDonut(canvasId, legendId, segments) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const W = canvas.width, H = canvas.height;
+            const cx = W / 2, cy = H / 2, R = Math.min(W, H) / 2 - 10, r = R * 0.55;
+            ctx.clearRect(0, 0, W, H);
+            let startAngle = -Math.PI / 2;
+            const total = segments.reduce((s, seg) => s + Math.max(seg.value, 0), 0);
+            if (total <= 0) return;
+
+            segments.forEach(seg => {
+                if (seg.value <= 0) return;
+                const slice = (seg.value / total) * Math.PI * 2;
+                ctx.beginPath();
+                ctx.arc(cx, cy, R, startAngle, startAngle + slice);
+                ctx.arc(cx, cy, r, startAngle + slice, startAngle, true);
+                ctx.closePath();
+                ctx.fillStyle = seg.color;
+                ctx.fill();
+                startAngle += slice;
+            });
+
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 14px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('100%', cx, cy - 8);
+            ctx.font = '10px Inter, sans-serif';
+            ctx.fillStyle = '#888';
+            ctx.fillText('Ventas Totales', cx, cy + 8);
+
+            const legend = document.getElementById(legendId);
+            if (!legend) return;
+            legend.innerHTML = '';
+            segments.forEach(seg => {
+                if (seg.value <= 0) return;
+                const pct = ((seg.value / total) * 100).toFixed(1);
+                const item = document.createElement('div');
+                item.className = 'donut-legend-item';
+                item.innerHTML = `<span class="donut-swatch" style="background:${seg.color}"></span><span>${seg.label}</span><span class="donut-pct">${pct}%</span>`;
+                legend.appendChild(item);
+            });
+        }
+
         function renderGraphics(w, d, lfi, balc, floors) {
             const sc = 4;
             let vLot = document.getElementById('vis-lot');
-            vLot.style.width = `${w*sc}px`; vLot.style.height = `${d*sc}px`;
-            let ls = vLot.querySelectorAll('.side-metric-label'); ls.forEach(l=>l.remove());
-            
-            let tObra = floors.reduce((a,b)=>a+b.grossM2, 0) + (floors.length * w * balc * 2);
-            let tVend = floors.reduce((a,b)=>a+b.netM2, 0) + (floors.length * w * balc * 2 * 0.5);
-            vLot.appendChild(createMeasure('side-metric-label', `Sup. Obra: ${fmt.format(tObra)} m²`, {top: '15px'}));
-            vLot.appendChild(createMeasure('side-metric-label', `Sup. Vendible: ${fmt.format(tVend)} m²`, {top: '50px'}));
-            document.getElementById('vis-foot').style.height = `${(lfi/d)*100}%`;
-            
+            vLot.style.width = `${w * sc}px`; vLot.style.height = `${d * sc}px`;
+            let ls = vLot.querySelectorAll('.side-metric-label'); ls.forEach(l => l.remove());
+
+            let balcFloors = Math.max(0, floors.length - 1);
+            let tObra = floors.reduce((a, b) => a + b.grossM2, 0) + (balcFloors * w * balc * 2);
+            let tVend = floors.reduce((a, b) => a + b.netM2, 0) + (balcFloors * w * balc * 2 * 0.5);
+            vLot.appendChild(createMeasure('side-metric-label', `Sup. Obra: ${fmt.format(tObra)} m²`, { top: '15px' }));
+            vLot.appendChild(createMeasure('side-metric-label', `Sup. Vendible: ${fmt.format(tVend)} m²`, { top: '50px' }));
+            document.getElementById('vis-foot').style.height = `${(lfi / d) * 100}%`;
+
             // 3D AXONOMETRIC
             let iso = document.getElementById('iso-world'); iso.innerHTML = '';
             let s3 = sc * 2;
             let lot3d = document.createElement('div'); lot3d.className = 'iso-lot';
-            lot3d.style.width = `${w*s3}px`; lot3d.style.height = `${d*s3}px`; lot3d.style.transform = `translate(-50%, -50%)`;
-            lot3d.appendChild(createMeasure('iso-measure', `${w}m`, {bottom: "-25px", left: "50%", transform: "translateX(-50%)"}));
-            lot3d.appendChild(createMeasure('iso-measure', `${lfi}m`, {right: "-45px", top: "50%", transform: "translateY(-50%) rotateZ(-90deg)"}));
+            lot3d.style.width = `${w * s3}px`; lot3d.style.height = `${d * s3}px`; lot3d.style.transform = `translate(-50%, -50%)`;
+            lot3d.appendChild(createMeasure('iso-measure', `${w}m`, { bottom: "-25px", left: "50%", transform: "translateX(-50%)" }));
+            lot3d.appendChild(createMeasure('iso-measure', `${lfi}m`, { right: "-45px", top: "50%", transform: "translateY(-50%) rotateZ(-90deg)" }));
             iso.appendChild(lot3d);
 
             let currZ = 0;
             floors.forEach(f => {
                 let layer = document.createElement('div'); layer.className = 'iso-layer';
-                let offY = (-d*s3)/2 + (f.rLevel ? f.rLevel*2 : 0)*s3 + (f.d*s3)/2;
-                layer.style.width = `${w*s3}px`; layer.style.height = `${f.d*s3}px`;
+                let offY = (-d * s3) / 2 + (f.rLevel ? f.rLevel * 2 : 0) * s3 + (f.d * s3) / 2;
+                layer.style.width = `${w * s3}px`; layer.style.height = `${f.d * s3}px`;
                 layer.style.transform = `translateZ(${currZ}px) translate(-50%, calc(-50% + ${offY}px))`;
-                
-                if(balc > 0) {
-                    layer.appendChild(createBalc3D('iso-balcony', (w-0.6)*s3, balc*s3, -balc*s3, null, s3));
-                    layer.appendChild(createBalc3D('iso-balcony', (w-0.6)*s3, balc*s3, null, -balc*s3, s3));
+
+                if (balc > 0 && !(f.level === 0 && f.rLevel === 0)) {
+                    layer.appendChild(createBalc3D('iso-balcony', (w - 0.6) * s3, balc * s3, -balc * s3, null, s3));
+                    layer.appendChild(createBalc3D('iso-balcony', (w - 0.6) * s3, balc * s3, null, -balc * s3, s3));
                 }
 
                 let callout = document.createElement('div'); callout.className = 'callout-box';
-                callout.innerHTML = `<div class="callout-name">${f.rLevel?"Retiro "+f.rLevel:(f.level===0?"Basamento":"Piso "+f.level)}</div>
+                callout.innerHTML = `<div class="callout-name">${f.rLevel ? "Retiro " + f.rLevel : (f.level === 0 ? "Basamento" : "Piso " + f.level)}</div>
                                      <div class="callout-val"><span>Obra:</span><span>${fmt.format(f.grossM2)}m²</span></div>
                                      <div class="callout-val"><span>Venta:</span><span>${fmt.format(f.netM2)}m²</span></div>`;
                 let leader = document.createElement('div'); leader.className = 'leader-line'; leader.style.width = '45px';
                 layer.appendChild(leader); layer.appendChild(callout);
                 iso.appendChild(layer); currZ += 18;
             });
-            if(sync3D) sync3D();
+            if (sync3D) sync3D();
 
             // 2D PROFILE
             let vProf = document.getElementById('vis-prof'); vProf.innerHTML = '';
             floors.forEach(f => {
                 let p = document.createElement('div'); p.className = 'prof-floor';
-                p.style.width = `${f.d*sc}px`; p.style.height = '14px'; p.style.marginLeft = `${(f.rLevel?f.rLevel*2:0)*sc}px`;
-                p.innerText = f.rLevel ? `R${f.rLevel}` : (f.level===0?"PB":"P"+f.level);
+                p.style.width = `${f.d * sc}px`; p.style.height = '14px'; p.style.marginLeft = `${(f.rLevel ? f.rLevel * 2 : 0) * sc}px`;
+                p.innerText = f.rLevel ? `R${f.rLevel}` : (f.level === 0 ? "PB" : "P" + f.level);
                 vProf.appendChild(p);
             });
         }
 
         function createMeasure(cls, txt, sty = {}) { let m = document.createElement('div'); m.className = cls; m.innerText = txt; Object.assign(m.style, sty); return m; }
         function createBalc3D(cls, w, h, t, b, s3) {
-            let e = document.createElement('div'); e.className = cls; e.style.width = `${w}px`; e.style.height = `${h}px`; e.style.left = `${0.3*s3}px`;
-            if(t !== null) e.style.top = `${t}px`; if(b !== null) e.style.bottom = `${b}px`; return e;
+            let e = document.createElement('div'); e.className = cls; e.style.width = `${w}px`; e.style.height = `${h}px`; e.style.left = `${0.3 * s3}px`;
+            if (t !== null) e.style.top = `${t}px`; if (b !== null) e.style.bottom = `${b}px`; return e;
         }
 
         function attachEngine(id, is3D) {
@@ -726,15 +958,16 @@
             let o = { sc: 1.2, x: 0, y: 0, rx: 60, rz: -45, drag: false, btn: 0, lx: 0, ly: 0 };
             let apply = () => {
                 tg.style.transform = is3D ? `scale(${o.sc}) translate(${o.x}px, ${o.y}px) rotateX(${o.rx}deg) rotateZ(${o.rz}deg)` : `scale(${o.sc}) translate(${o.x}px, ${o.y}px)`;
-                if(is3D) tg.querySelectorAll('.iso-measure, .callout-box').forEach(m => m.style.transform = `rotateZ(${-o.rz}deg) rotateX(${-o.rx}deg) scale(${1/o.sc})`);
+                if (is3D) tg.querySelectorAll('.iso-measure, .callout-box').forEach(m => m.style.transform = `rotateZ(${-o.rz}deg) rotateX(${-o.rx}deg) scale(${1 / o.sc})`);
             };
-            if(is3D) sync3D = apply;
+            if (is3D) sync3D = apply;
             apply();
-            root.addEventListener('wheel', e => { e.preventDefault(); o.sc = Math.min(Math.max(0.3, o.sc - e.deltaY*0.002), 4); apply(); });
+            root.addEventListener('wheel', e => { e.preventDefault(); o.sc = Math.min(Math.max(0.3, o.sc - e.deltaY * 0.002), 4); apply(); });
             root.addEventListener('mousedown', e => { o.drag = true; o.btn = e.button; o.lx = e.clientX; o.ly = e.clientY; });
             window.addEventListener('mouseup', () => o.drag = false);
-            root.addEventListener('mousemove', e => { if(!o.drag) return; let dx = e.clientX - o.lx, dy = e.clientY - o.ly;
-                if(is3D && o.btn === 0) { o.rz -= dx*0.5; o.rx -= dy*0.5; o.rx = Math.max(0, Math.min(o.rx, 90)); } else { o.x += dx/o.sc; o.y += dy/o.sc; }
+            root.addEventListener('mousemove', e => {
+                if (!o.drag) return; let dx = e.clientX - o.lx, dy = e.clientY - o.ly;
+                if (is3D && o.btn === 0) { o.rz -= dx * 0.5; o.rx -= dy * 0.5; o.rx = Math.max(0, Math.min(o.rx, 90)); } else { o.x += dx / o.sc; o.y += dy / o.sc; }
                 o.lx = e.clientX; o.ly = e.clientY; apply();
             });
             root.addEventListener('contextmenu', e => e.preventDefault());
@@ -752,7 +985,7 @@
             document.getElementById('r-rt').innerText = fmtDollar.format(rt);
             document.getElementById('r-cj').innerText = fmtDollar.format(cj);
             document.getElementById('r-rc').innerText = fmtDollar.format(rc);
-            document.getElementById('report-date').innerText = new Date().toLocaleDateString('es-AR', { day:'2-digit', month:'2-digit', year:'numeric' });
+            document.getElementById('report-date').innerText = new Date().toLocaleDateString('es-AR', { day: '2-digit', month: '2-digit', year: 'numeric' });
 
             // Update Assumptions Table
             document.getElementById('r-s-sale').innerText = fmtDollar.format(inputs.sale.num.value) + "/m²";
@@ -770,7 +1003,7 @@
             const target3d = document.getElementById('p-3d');
             target3d.innerHTML = '';
             const clone3d = document.getElementById('iso-world').cloneNode(true);
-            
+
             // Intelligence: Calculate vertical offset to center the "Building", not just the lot
             const floorsCount = document.querySelectorAll('#iso-world .iso-layer').length;
             const buildHeight = floorsCount * 18;
@@ -793,6 +1026,19 @@
             const cloneProf = document.getElementById('vis-prof').cloneNode(true);
             cloneProf.style.transform = "scale(0.85)";
             targetProf.appendChild(cloneProf);
+
+            // Clone Donut Chart
+            const pChart = document.getElementById('p-chart');
+            if(pChart) {
+                pChart.innerHTML = '';
+                const canvas = document.getElementById('chart-explain');
+                if (canvas) {
+                    const img = document.createElement('img');
+                    img.src = canvas.toDataURL();
+                    img.style.width = '150px';
+                    pChart.appendChild(img);
+                }
+            }
         }
 
         document.getElementById('btn-print-pdf').addEventListener('click', () => {
@@ -803,45 +1049,54 @@
         // USIG API
         const sIn = document.getElementById('in-search'), sRes = document.getElementById('res-search'), sSec = sIn.closest('.section');
         let sTmt;
-        sIn.addEventListener('input', e => { let v = e.target.value.trim(); if(v.length < 4) { sRes.classList.remove('active'); return; }
-            clearTimeout(sTmt); sTmt = setTimeout(()=> fetchUSIG(v), 500);
+        sIn.addEventListener('input', e => {
+            let v = e.target.value.trim(); if (v.length < 4) { sRes.classList.remove('active'); return; }
+            clearTimeout(sTmt); sTmt = setTimeout(() => fetchUSIG(v), 500);
         });
         async function fetchUSIG(addr) {
             sSec.classList.add('loading');
-            try { let res = await fetch(`https://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=${encodeURIComponent(addr)}&max=5`), data = await res.json();
-                sRes.innerHTML = ''; if(data.direccionesNormalizadas) data.direccionesNormalizadas.forEach(d => {
+            try {
+                let res = await fetch(`https://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=${encodeURIComponent(addr)}&max=5`), data = await res.json();
+                sRes.innerHTML = ''; if (data.direccionesNormalizadas) data.direccionesNormalizadas.forEach(d => {
                     let i = document.createElement('div'); i.className = 'search-item'; i.innerText = d.direccion;
                     i.onclick = () => { sIn.value = d.direccion; sRes.classList.remove('active'); addrDisp.innerText = d.direccion; fetchZone(d); calc(); };
                     sRes.appendChild(i);
                 }); sRes.classList.add('active');
-            } catch(e) {} finally { sSec.classList.remove('loading'); }
+            } catch (e) { } finally { sSec.classList.remove('loading'); }
         }
         async function fetchZone(d) {
             const zLine = document.getElementById('zone-line'), zS = iZone, zW = zLine.closest('.control-group');
             zLine.innerText = 'Detectando...'; zW.classList.add('loading');
-            try { let r = await fetch(`https://ws.usig.buenosaires.gob.ar/datos_utiles?calle=${encodeURIComponent(d.nombre_calle)}&altura=${d.altura}`), data = await r.json();
+            try {
+                let r = await fetch(`https://ws.usig.buenosaires.gob.ar/datos_utiles?calle=${encodeURIComponent(d.nombre_calle)}&altura=${d.altura}`), data = await r.json();
                 let zRaw = data[0]?.codigo_de_planeamiento_urbano?.trim();
-                if(zRaw) {
+                if (zRaw) {
                     let z = zRaw.toUpperCase().replace(/\s/g, ''), matched = false;
-                    for(let o of zS.options) if(z.includes(o.value.toUpperCase()) || o.value.toUpperCase().includes(z)) { zS.value = o.value; matched = true; break; }
+                    for (let o of zS.options) if (z.includes(o.value.toUpperCase()) || o.value.toUpperCase().includes(z)) { zS.value = o.value; matched = true; break; }
                     zLine.innerHTML = matched ? `Detectada: <strong>${zRaw}</strong>` : `No detectada: <strong>${zRaw}</strong> — <a href="https://ciudad3d.buenosaires.gob.ar" target="_blank" style="color:var(--accent)">Ir a Ciudad 3D</a>`;
                 } else { zLine.innerHTML = 'Sin detección. <a href="https://ciudad3d.buenosaires.gob.ar" target="_blank" style="color:var(--accent)">Verificar Ciudad 3D</a>'; }
-            } catch(e) {} finally { zW.classList.remove('loading'); calc(); }
+            } catch (e) { } finally { zW.classList.remove('loading'); calc(); }
         }
 
-        document.getElementById('btn-explain').onclick = () => document.getElementById('modal-explain').style.display='flex';
-        document.getElementById('btn-stress-pro').onclick = () => document.getElementById('modal-stress').style.display='flex';
+        document.getElementById('btn-explain').onclick = () => document.getElementById('modal-explain').style.display = 'flex';
+        document.getElementById('link-residual-edu').onclick = (e) => { e.preventDefault(); document.getElementById('modal-explain').style.display = 'none'; document.getElementById('modal-residual').style.display = 'flex'; renderDonutCharts(); };
+        document.getElementById('btn-stress-pro').onclick = () => document.getElementById('modal-stress').style.display = 'flex';
         document.getElementById('card-resid').onclick = () => {
-             document.getElementById('celebrate-amount').innerText = state.strResCash;
-             let cBlock = document.getElementById('celebrate-canje-block');
-             if(state.canjeM2 > 0) {
-                 cBlock.style.display = 'block';
-                 document.getElementById('celebrate-canje-m2').innerText = fmt.format(state.canjeM2) + ' m²';
-                 document.getElementById('celebrate-canje-sub').innerText = `Equivale aproximadamente a ${fmtDec.format(state.canjeM2/50)} unidades funcionales de 50 m².`;
-             } else { cBlock.style.display = 'none'; }
-             document.getElementById('modal-celebrate').style.display='flex';
+            document.getElementById('celebrate-amount').innerText = state.strResCash;
+            let cBlock = document.getElementById('celebrate-canje-block');
+            if (state.canjeM2 > 0) {
+                cBlock.style.display = 'block';
+                document.getElementById('celebrate-canje-m2').innerText = fmt.format(state.canjeM2) + ' m²';
+                document.getElementById('celebrate-canje-sub').innerText = `Equivale aproximadamente a ${fmtDec.format(state.canjeM2 / 50)} unidades funcionales de 50 m².`;
+            } else { cBlock.style.display = 'none'; }
+            document.getElementById('modal-celebrate').style.display = 'flex';
         };
-        document.querySelectorAll('.modal-overlay').forEach(m => m.onclick = (e) => { if(e.target===m) m.style.display='none'; });
+        document.querySelectorAll('.modal-overlay').forEach(m => m.onclick = (e) => { if (e.target === m) m.style.display = 'none'; });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay').forEach(m => m.style.display = 'none');
+            }
+        });
         document.getElementById('btn-splash-exit').onclick = () => {
             const splash = document.getElementById('splash');
             splash.classList.add('fade-out');
@@ -851,4 +1106,5 @@
         calc();
     </script>
 </body>
+
 </html>
