@@ -955,13 +955,21 @@
 
         function attachEngine(id, is3D) {
             const root = document.getElementById(id); const tg = is3D ? root.firstElementChild.firstElementChild : root.firstElementChild;
-            let o = { sc: 1.2, x: 0, y: 0, rx: 60, rz: -45, drag: false, btn: 0, lx: 0, ly: 0 };
+            let o = { sc: 1.2, x: 0, y: 0, rx: 60, rz: -45, drag: false, btn: 0, lx: 0, ly: 0, pdist: 0 };
+            
+            // Auto-scale down on mobile for initial load
+            if (window.innerWidth <= 768) {
+                o.sc = 0.8;
+            }
+
             let apply = () => {
                 tg.style.transform = is3D ? `scale(${o.sc}) translate(${o.x}px, ${o.y}px) rotateX(${o.rx}deg) rotateZ(${o.rz}deg)` : `scale(${o.sc}) translate(${o.x}px, ${o.y}px)`;
                 if (is3D) tg.querySelectorAll('.iso-measure, .callout-box').forEach(m => m.style.transform = `rotateZ(${-o.rz}deg) rotateX(${-o.rx}deg) scale(${1 / o.sc})`);
             };
             if (is3D) sync3D = apply;
             apply();
+            
+            // Mouse Events
             root.addEventListener('wheel', e => { e.preventDefault(); o.sc = Math.min(Math.max(0.3, o.sc - e.deltaY * 0.002), 4); apply(); });
             root.addEventListener('mousedown', e => { o.drag = true; o.btn = e.button; o.lx = e.clientX; o.ly = e.clientY; });
             window.addEventListener('mouseup', () => o.drag = false);
@@ -971,6 +979,35 @@
                 o.lx = e.clientX; o.ly = e.clientY; apply();
             });
             root.addEventListener('contextmenu', e => e.preventDefault());
+
+            // Touch Events
+            const getPinchDist = (t1, t2) => Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
+            
+            root.addEventListener('touchstart', e => {
+                if(e.touches.length === 1) {
+                    o.drag = true; o.btn = 0; o.lx = e.touches[0].clientX; o.ly = e.touches[0].clientY;
+                } else if(e.touches.length === 2) {
+                    o.drag = false; o.pdist = getPinchDist(e.touches[0], e.touches[1]);
+                }
+            }, {passive: false});
+            
+            window.addEventListener('touchend', () => o.drag = false);
+            
+            root.addEventListener('touchmove', e => {
+                if (e.touches.length === 1 && o.drag) {
+                    e.preventDefault(); // Prevent page scroll when interacting with canvas
+                    let dx = e.touches[0].clientX - o.lx, dy = e.touches[0].clientY - o.ly;
+                    if (is3D && o.btn === 0) { o.rz -= dx * 0.5; o.rx -= dy * 0.5; o.rx = Math.max(0, Math.min(o.rx, 90)); } else { o.x += dx / o.sc; o.y += dy / o.sc; }
+                    o.lx = e.touches[0].clientX; o.ly = e.touches[0].clientY; apply();
+                } else if (e.touches.length === 2) {
+                    e.preventDefault(); // Prevent native pinch-zoom
+                    let ndist = getPinchDist(e.touches[0], e.touches[1]);
+                    let diff = ndist - o.pdist;
+                    o.sc = Math.min(Math.max(0.3, o.sc + diff * 0.01), 4);
+                    o.pdist = ndist;
+                    apply();
+                }
+            }, {passive: false});
         }
         attachEngine('cont-3d', true); attachEngine('cont-plan', false); attachEngine('cont-prof', false);
 

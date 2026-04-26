@@ -359,6 +359,54 @@ input:focus, select:focus { border-color: var(--accent); }
     .btn-primary-splash { padding: 15px 30px; font-size: 0.9rem; }
 }
 
+/* RESPONSIVE LAYOUT v3.8 */
+@media (max-width: 1024px) {
+    body {
+        flex-direction: column;
+        height: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        border-right: none;
+        border-bottom: 2px solid var(--border);
+        height: auto;
+        overflow: visible; /* Let the body scroll */
+    }
+    .main-view {
+        min-height: 800px; /* Give it some space to stack */
+    }
+    .card-highlight {
+        position: sticky;
+        bottom: 10px;
+        z-index: 1000;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 0 1px var(--accent);
+        background-color: #111;
+        backdrop-filter: blur(10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-view {
+        grid-template-rows: auto auto auto;
+        padding: 10px;
+        gap: 10px;
+        min-height: auto;
+    }
+    .bottom-panels {
+        grid-template-columns: 1fr; /* Stack planta and perfil */
+    }
+    .panel {
+        min-height: 350px;
+    }
+    .modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+}
+
 /* Donut Chart */
 .donut-chart-container {
     display: flex;
